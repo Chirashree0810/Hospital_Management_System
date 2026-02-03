@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments - Hospital Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-blue-600 text-white p-4">
+    <h1 class="text-2xl font-bold">Appointments</h1>
+    <button id="logout-btn" class="float-right bg-red-500 hover:bg-red-600 p-2 rounded-lg">Logout</button>
+  </header>
+  <div class="container mx-auto p-6">
+    <div class="mb-4">
+      <button id="add-appointment-btn" class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600">Add Appointment</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="bg-blue-100">
+            <th class="p-2">Doctor</th>
+            <th class="p-2">Patient</th>
+            <th class="p-2">Phone Number</th>
+            <th class="p-2">Medical Record</th>
+            <th class="p-2">Date</th>
+            <th class="p-2">Time</th>
+            <th class="p-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="appointment-list"></tbody>
+      </table>
+    </div>
+    <!-- Modal for Add/Edit Appointment -->
+    <div id="appointment-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+      <div class="bg-white p-6 rounded-lg w-full max-w-md">
+        <h2 id="modal-title" class="text-xl font-semibold mb-4">Add Appointment</h2>
+        <div id="error-message" class="hidden text-red-500 text-center mb-4"></div>
+        <form id="appointment-form">
+          <div class="mb-4">
+            <label for="doctor-id" class="block text-sm font-medium text-gray-700">Doctor</label>
+            <select id="doctor-id" class="mt-1 w-full p-2 border rounded-lg" required>
+              <option value="">Select a Doctor</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="patient-id" class="block text-sm font-medium text-gray-700">Patient</label>
+            <select id="patient-id" class="mt-1 w-full p-2 border rounded-lg" required>
+              <option value="">Select a Patient</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="appointment-date" class="block text-sm font-medium text-gray-700">Date</label>
+            <input type="date" id="appointment-date" class="mt-1 w-full p-2 border rounded-lg" required>
+          </div>
+          <div class="mb-4">
+            <label for="appointment-time" class="block text-sm font-medium text-gray-700">Time</label>
+            <input type="time" id="appointment-time" class="mt-1 w-full p-2 border rounded-lg" required>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" id="cancel-btn" class="bg-gray-500 text-white p-2 rounded-lg mr-2 hover:bg-gray-600">Cancel</button>
+            <button type="submit" id="save-btn" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/appointment.js"></script>
+</body>
+</html>

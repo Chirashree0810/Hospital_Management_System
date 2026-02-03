@@ -1,0 +1,207 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "username": "doctor",
+      "password": "docpass",
+      "role": "doctor"
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. John Smith",
+      "specialization": "Cardiology",
+      "assignedStaff": [
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dr. Emily Davis",
+      "specialization": "Neurology",
+      "assignedStaff": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dr. Michael Lee",
+      "specialization": "Orthopedics",
+      "assignedStaff": [
+        2
+      ]
+    },
+    {
+      "name": "Dr Navya",
+      "specialization": "Dermatologist",
+      "assignedStaff": [
+        5
+      ],
+      "id": 5
+    },
+    {
+      "name": "Dr. Sarala Devi",
+      "specialization": "Pediatrics",
+      "assignedStaff": [
+        4
+      ],
+      "id": 6
+    },
+    {
+      "name": "Dr Nayana Kumari",
+      "specialization": "Cardiology",
+      "assignedStaff": [
+        7
+      ],
+      "id": 7
+    },
+    {
+      "name": "Dr xyzs",
+      "specialization": "Cardiology",
+      "assignedStaff": [],
+      "id": 8
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "name": "Jane",
+      "phone": "123-456-7890",
+      "medicalRecord": "High blood pressure, prescribed medication"
+    },
+    {
+      "id": 2,
+      "name": "Michael Brown",
+      "phone": "987-654-3210",
+      "medicalRecord": "Migraine history, under observation"
+    },
+    {
+      "name": "anitha m",
+      "phone": "234-562-9874",
+      "medicalRecord": "diabities",
+      "id": 3
+    },
+    {
+      "name": "anirudh",
+      "phone": "365-587-2365",
+      "medicalRecord": "high fever",
+      "id": 4
+    },
+    {
+      "name": "jhon",
+      "phone": "523-895-1256",
+      "medicalRecord": "none",
+      "id": 5
+    }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "name": "Nurse Amy",
+      "assignedDoctorId": 1
+    },
+    {
+      "id": 2,
+      "name": "Nurse Bob",
+      "assignedDoctorId": 3
+    },
+    {
+      "id": 4,
+      "name": "Nurse David",
+      "assignedDoctorId": 6
+    },
+    {
+      "name": "nurse spoorthi",
+      "assignedDoctorId": 5,
+      "id": 5
+    },
+    {
+      "name": "Nurse adithi",
+      "assignedDoctorId": 2,
+      "id": 6
+    },
+    {
+      "name": "Nurse Smanvi",
+      "assignedDoctorId": 7,
+      "id": 7
+    },
+    {
+      "name": "nurse zyx",
+      "assignedDoctorId": 8,
+      "id": 8
+    }
+  ],
+  "appointments": [
+    {
+      "id": 2,
+      "doctorId": 2,
+      "patientId": 2,
+      "date": "2025-05-22",
+      "time": "12:30"
+    },
+    {
+      "id": 3,
+      "doctorId": 3,
+      "patientId": 3,
+      "date": "2025-05-23",
+      "time": "10:40"
+    },
+    {
+      "doctorId": 5,
+      "patientId": 4,
+      "date": "2025-05-20",
+      "time": "03:45",
+      "id": 4
+    },
+    {
+      "doctorId": 7,
+      "patientId": 5,
+      "date": "2025-05-20",
+      "time": "10:50",
+      "id": 5
+    }
+  ],
+  "billing": [
+    {
+      "id": 2,
+      "patientId": 2,
+      "amount": 500,
+      "description": "Neurology consultation",
+      "date": "2025-05-19"
+    },
+    {
+      "id": 3,
+      "patientId": 3,
+      "amount": 100,
+      "description": "Routine checkup",
+      "date": "2025-05-20"
+    },
+    {
+      "patientId": 4,
+      "amount": 200,
+      "description": "normal checkup",
+      "date": "2025-05-19",
+      "id": 4
+    },
+    {
+      "patientId": 1,
+      "amount": 1000,
+      "description": "heart checkup",
+      "date": "2025-05-19",
+      "id": 5
+    },
+    {
+      "patientId": 5,
+      "amount": 100,
+      "description": "normal cold",
+      "date": "2025-05-19",
+      "id": 6
+    }
+  ]
+}

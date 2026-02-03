@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Management - Hospital Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl">Hospital Management System</h1>
+    <button id="logout-btn" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded">Logout</button>
+  </header>
+
+  <main class="container mx-auto p-4">
+    <h2 class="text-xl mb-4">Staff Management</h2>
+
+    <!-- Admin Controls (Hidden for non-admins) -->
+    <div id="admin-controls" class="mb-4 hidden">
+      <button id="add-staff-btn" class="bg-green-500 text-white p-2 rounded hover:bg-green-600">Add Staff</button>
+    </div>
+
+    <table class="w-full border-collapse bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2 text-left">Name</th>
+          <th class="p-2 text-left">Assigned Doctor</th>
+          <th id="actions-header" class="p-2 text-left hidden">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="staff-list"></tbody>
+    </table>
+
+    <!-- Modal for Add/Edit Staff (for admins only) -->
+    <div id="staff-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+      <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h3 id="modal-title" class="text-lg mb-4">Add Staff</h3>
+        <form id="staff-form">
+          <div class="mb-4">
+            <label for="staff-name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="staff-name" class="mt-1 w-full p-2 border rounded-lg" required>
+          </div>
+          <div class="mb-4">
+            <label for="doctor-id" class="block text-sm font-medium text-gray-700">Assign to Doctor</label>
+            <select id="doctor-id" class="mt-1 w-full p-2 border rounded-lg">
+              <option value="">Not Assigned</option>
+              <!-- Doctors will be populated dynamically -->
+            </select>
+          </div>
+          <div id="error-message" class="text-red-500 mb-4 hidden"></div>
+          <div class="flex justify-end">
+            <button type="button" id="cancel-btn" class="bg-gray-500 text-white p-2 rounded mr-2 hover:bg-gray-600">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/staff.js"></script>
+</body>
+</html>

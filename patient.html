@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patients - Hospital Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-blue-600 text-white p-4">
+    <h1 class="text-2xl font-bold">Patients</h1>
+    <button id="logout-btn" class="float-right bg-red-500 hover:bg-red-600 p-2 rounded-lg">Logout</button>
+  </header>
+  <div class="container mx-auto p-6">
+    <div class="mb-4">
+      <button id="add-patient-btn" class="bg-green-500 text-white p-2 rounded-lg hover:bg-green-600">Add Patient</button>
+    </div>
+    <div class="bg-white rounded-lg shadow-lg p-4">
+      <table class="w-full text-left">
+        <thead>
+          <tr class="bg-blue-100">
+            <th class="p-2">Name</th>
+            <th class="p-2">Phone Number</th>
+            <th class="p-2">Medical Record</th>
+            <th class="p-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="patient-list"></tbody>
+      </table>
+    </div>
+    <!-- Modal for Add/Edit Patient -->
+    <div id="patient-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+      <div class="bg-white p-6 rounded-lg w-full max-w-md">
+        <h2 id="modal-title" class="text-xl font-semibold mb-4">Add Patient</h2>
+        <div id="error-message" class="hidden text-red-500 text-center mb-4"></div>
+        <form id="patient-form">
+          <div class="mb-4">
+            <label for="patient-name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="patient-name" class="mt-1 w-full p-2 border rounded-lg" required>
+          </div>
+          <div class="mb-4">
+            <label for="patient-phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input type="text" id="patient-phone" class="mt-1 w-full p-2 border rounded-lg" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+          </div>
+          <div class="mb-4">
+            <label for="patient-medical" class="block text-sm font-medium text-gray-700">Medical Record</label>
+            <textarea id="patient-medical" class="mt-1 w-full p-2 border rounded-lg" required></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" id="cancel-btn" class="bg-gray-500 text-white p-2 rounded-lg mr-2 hover:bg-gray-600">Cancel</button>
+            <button type="submit" id="save-btn" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/patient.js"></script>
+</body>
+</html>

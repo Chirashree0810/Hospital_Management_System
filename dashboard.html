@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Hospital Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-blue-600 text-white p-4">
+    <h1 class="text-2xl font-bold">Admin Dashboard</h1>
+    <button id="logout-btn" class="float-right bg-red-500 hover:bg-red-600 p-2 rounded-lg">Logout</button>
+  </header>
+  <div class="container mx-auto p-6">
+    <h2 class="text-xl font-semibold mb-4">Overview</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-white p-4 rounded-lg shadow-lg">
+        <h3 class="text-lg font-medium">Doctors</h3>
+        <p id="doctor-count" class="text-2xl font-bold text-blue-600">0</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg">
+        <h3 class="text-lg font-medium">Patients</h3>
+        <p id="patient-count" class="text-2xl font-bold text-blue-600">0</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg">
+        <h3 class="text-lg font-medium">Staff</h3>
+        <p id="staff-count" class="text-2xl font-bold text-blue-600">0</p>
+      </div>
+    </div>
+    <h2 class="text-xl font-semibold mb-4">Manage Resources</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="doctor.html" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 text-center">Manage Doctors</a>
+      <a href="patient.html" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 text-center">Manage Patients</a>
+      <a href="staff.html" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 text-center">Manage Staff</a>
+      <a href="appointment.html" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 text-center">Manage Appointments</a>
+      <a href="billing.html" class="bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 text-center">Manage Billing</a>
+    </div>
+  </div>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body {
+  background: linear-gradient(135deg, #e0f7fa, #b3e5fc);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+}
